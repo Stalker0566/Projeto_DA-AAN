@@ -167,38 +167,34 @@ erDiagram
 
 ---
 
-## 📸 Ecrãs da Aplicação
+## 📸 Ecrãs e Funcionalidades da Aplicação
 
-| Ecrã | Descrição |
+| Ecrã / Módulo | Descrição |
 |---|---|
-| **Login** | Autenticação de utilizador com validação |
-| **Dashboard** | Painel principal com lista de compras abertas |
-| **Categorias** | Gestão de categorias de artigos (CRUD completo) |
-| **Artigos** | Gestão de artigos com filtragem por categoria |
-| **Orçamentos** | Gestão de orçamentos mensais com prevenção de duplicados |
-| **Compras** | Criar, fechar e gerir listas de compras |
-| **Detalhes da Compra** | Adicionar itens a uma compra com quantidade e preço |
+| **Login** | Autenticação segura de utilizador com palavras-passe encriptadas (PBKDF2 com Salt). |
+| **Dashboard** | Painel principal com visualização de compras em aberto e acesso direto a todos os submódulos. |
+| **Categorias** | Gestão completa (CRUD) de categorias de artigos (Tipos de Artigos). |
+| **Artigos** | Gestão completa (CRUD) de artigos, associados a categorias. |
+| **Orçamentos** | Definição de orçamentos mensais, prevenindo duplicados para o mesmo período. |
+| **Compras** | Planeamento e gestão de compras por intervalo de datas. |
+| **Detalhes de Compra** | Modos de edição e de compra, permitindo controlo de quantidades, preços, itens previstos/não previstos e fecho de compras (modo leitura automático). |
+| **Estatísticas** | Visualização de total gasto vs. orçamento restante. |
+| **Apoio à Decisão** | Geração automática de sugestões inteligentes de listas de compras e orçamentos recomendados com base no histórico. |
+| **Exportação CSV** | Exportação completa das compras fechadas para ficheiro CSV. |
+| **Utilizadores** | CRUD de utilizadores da aplicação para controlo de acesso. |
 
 ---
 
 ## 👥 Autores
 
-- **Projeto DA — AAN**
+- **André Kotelyanets** (Nº Aluno: 2024147182)
+- **Nazar Bobko** (Nº Aluno: 2024??????)
+- **Artem Chernysch** (Nº Aluno: 2024??????)
+- **Grupo AAN**
 
 ---
 
 ## 📄 Licença
 
-Este projeto é desenvolvido para fins académicos.
+Este projeto é desenvolvido para fins académicos no âmbito da unidade curricular de Desenvolvimento de Aplicações (DA).
 
----
-
-## 🔮 Melhorias Futuras
-
-- [ ] Implementar gestão de utilizadores
-- [ ] Implementar ecrã de estatísticas e relatórios
-- [ ] Adicionar cálculo automático de totais nas compras
-- [ ] Comparação orçamento vs. gastos reais
-- [ ] Implementar hash de palavras-passe
-- [ ] Adicionar validação de inputs nos formulários
-- [ ] Suporte para exportação de dados (CSV/PDF)
