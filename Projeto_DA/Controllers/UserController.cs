@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Projeto_DA.Data;
 using Projeto_DA.Models;
 
@@ -28,7 +28,9 @@ namespace Projeto_DA.Controllers
                 if (context.Users.Any(u => u.Username == username))
                     return false; 
 
-                context.Users.Add(new User { Username = username, Password = password });
+                // Hashing the password before saving
+                string hashedPassword = PasswordHasher.HashPassword(password);
+                context.Users.Add(new User { Username = username, Password = hashedPassword });
                 context.SaveChanges();
                 return true;
             }
@@ -45,7 +47,18 @@ namespace Projeto_DA.Controllers
                 if (user != null)
                 {
                     user.Username = username;
-                    user.Password = password;
+                    
+                    // Se a senha foi alterada (ou seja, não contém ':' indicando que não é o hash anterior),
+                    // geramos um novo hash. Caso contrário, mantemos o hash existente.
+                    if (!password.Contains(':'))
+                    {
+                        user.Password = PasswordHasher.HashPassword(password);
+                    }
+                    else
+                    {
+                        user.Password = password;
+                    }
+                    
                     context.SaveChanges();
                     return true;
                 }

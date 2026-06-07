@@ -22,7 +22,7 @@ namespace Projeto_DA
                 // verifica se já existe um usuário admin, se não existir, cria um
                 if (!context.Users.Any())
                 {
-                    context.Users.Add(new User { Username = "admin", Password = "123" });
+                    context.Users.Add(new User { Username = "admin", Password = PasswordHasher.HashPassword("123") });
                     context.SaveChanges(); // Сохраняем в базу!
                 }
             }
