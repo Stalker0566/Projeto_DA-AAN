@@ -17,13 +17,27 @@ namespace Projeto_DA.Views
         private void PurchasesForm_Load(object sender, EventArgs e)
         {
             LoadData();
+
         }
 
         private void LoadData()
         {
             dgvPurchases.DataSource = _controller.GetAll();
+            dgvPurchases.DefaultCellStyle.ForeColor = Color.Black;
             if (dgvPurchases.Columns["ID"] != null)
                 dgvPurchases.Columns["ID"].Width = 40;
+
+            // dark mode styles data grid view
+            dgvPurchases.BackgroundColor = Color.FromArgb(28, 28, 30);
+            dgvPurchases.DefaultCellStyle.BackColor = Color.FromArgb(45, 45, 48);
+            dgvPurchases.DefaultCellStyle.ForeColor = Color.White;
+            dgvPurchases.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+            dgvPurchases.DefaultCellStyle.SelectionForeColor = Color.White;
+
+
+            dgvPurchases.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 45, 48);
+            dgvPurchases.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvPurchases.EnableHeadersVisualStyles = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -88,5 +102,34 @@ namespace Projeto_DA.Views
                 }
             }
         }
+
+
+        private void btnExportCSV_Click(object sender, EventArgs e)
+        {
+            // abrimos um SaveFileDialog para o usuário escolher onde salvar o ficheiro CSV
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Ficheiros CSV (*.csv)|*.csv";
+                sfd.FileName = "Compras_Fechadas.csv"; // Имя файла по умолчанию
+                sfd.Title = "Guardar ficheiro de compras fechadas";
+
+                // se o usuário clicar em "Salvar", chamamos o método do controller para exportar as compras fechadas para o caminho escolhido pelo usuário
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // chamamos o método do controller para exportar as compras fechadas para o caminho escolhido pelo usuário
+                        _controller.ExportToCSV(sfd.FileName);
+                        MessageBox.Show("Ficheiro exportado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao exportar o ficheiro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Projeto_DA.Views
 {
-    partial class CategoriesForm
+    partial class UsersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvCategories = new DataGridView();
-            txtName = new TextBox();
+            dgvUsers = new DataGridView();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
             btnAdd = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvCategories).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             SuspendLayout();
             // 
-            // dgvCategories
+            // dgvUsers
             // 
-            dgvCategories.BackgroundColor = Color.FromArgb(44, 44, 46);
-            dgvCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategories.Location = new Point(23, 29);
-            dgvCategories.Name = "dgvCategories";
-            dgvCategories.ReadOnly = true;
-            dgvCategories.Size = new Size(426, 150);
-            dgvCategories.TabIndex = 0;
-            dgvCategories.CellContentClick += dgvCategories_CellContentClick;
+            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsers.Location = new Point(3, 79);
+            dgvUsers.Name = "dgvUsers";
+            dgvUsers.Size = new Size(759, 150);
+            dgvUsers.TabIndex = 0;
             // 
-            // txtName
+            // txtUsername
             // 
-            txtName.Location = new Point(190, 201);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(100, 23);
-            txtName.TabIndex = 1;
+            txtUsername.Location = new Point(26, 43);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(100, 23);
+            txtUsername.TabIndex = 1;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(132, 43);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(100, 23);
+            txtPassword.TabIndex = 2;
             // 
             // btnAdd
             // 
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnAdd.ForeColor = SystemColors.ControlLightLight;
-            btnAdd.Location = new Point(59, 276);
+            btnAdd.Location = new Point(412, 31);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(96, 39);
-            btnAdd.TabIndex = 2;
+            btnAdd.Size = new Size(81, 42);
+            btnAdd.TabIndex = 3;
             btnAdd.Text = "Adicionar";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
@@ -72,10 +77,10 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnEdit.ForeColor = SystemColors.ControlLightLight;
-            btnEdit.Location = new Point(194, 276);
+            btnEdit.Location = new Point(499, 31);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(96, 39);
-            btnEdit.TabIndex = 3;
+            btnEdit.Size = new Size(81, 42);
+            btnEdit.TabIndex = 4;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
@@ -85,39 +90,40 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = SystemColors.ControlLightLight;
-            btnDelete.Location = new Point(323, 276);
+            btnDelete.Location = new Point(586, 31);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(96, 39);
-            btnDelete.TabIndex = 4;
+            btnDelete.Size = new Size(81, 42);
+            btnDelete.TabIndex = 5;
             btnDelete.Text = "Eleminar";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
-            // CategoriesForm
+            // UsersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 28, 30);
-            ClientSize = new Size(484, 361);
+            ClientSize = new Size(774, 450);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
-            Controls.Add(txtName);
-            Controls.Add(dgvCategories);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "CategoriesForm";
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
+            Controls.Add(dgvUsers);
+            Name = "UsersForm";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "CategoriesForm";
-            Load += CategoriesForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvCategories).EndInit();
+            Text = "UsersForm";
+            Load += UsersForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dgvCategories;
-        private TextBox txtName;
+        private DataGridView dgvUsers;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
         private Button btnAdd;
         private Button btnEdit;
         private Button btnDelete;

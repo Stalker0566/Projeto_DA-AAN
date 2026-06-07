@@ -17,8 +17,7 @@ namespace Projeto_DA
             // teste admin
             using (var context = new AppDbContext())
             {
-
-                context.Database.EnsureCreated(); // !создние бд на новых устройствах
+                context.Database.EnsureCreated(); // cria a BD automaticamente em novos dispositivos
 
                 // verifica se já existe um usuário admin, se não existir, cria um
                 if (!context.Users.Any())

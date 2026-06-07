@@ -12,7 +12,6 @@ namespace Projeto_DA.Views
         {
             InitializeComponent();
             _authController = new AuthController();
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -41,18 +40,7 @@ namespace Projeto_DA.Views
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
+            Application.Exit(); // fechamos a aplicação quando o utilizador clicar no botão de sair
         }
     }
 }

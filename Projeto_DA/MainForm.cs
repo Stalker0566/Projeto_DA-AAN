@@ -84,19 +84,14 @@ namespace Projeto_DA
             LoadOpenPurchases();
         }
 
-        private void lblWelcome_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUsers_Click(object sender, EventArgs e)
         {
-
+            using (UsersForm f = new UsersForm()) { f.ShowDialog(); }
         }
 
-        private void dataGridViewPurchases_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnStats_Click(object sender, EventArgs e)
         {
-
+            using (StatisticsForm f = new StatisticsForm()) { f.ShowDialog(); }
         }
     }
 }

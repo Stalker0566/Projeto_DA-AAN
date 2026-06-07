@@ -21,6 +21,7 @@ namespace Projeto_DA.Models
         public int? ClosedById { get; set; }
         public User ClosedBy { get; set; }
 
-        public List<PurchaseItem> Items { get; set; } = new List<PurchaseItem>();
+
+        public virtual System.Collections.Generic.List<PurchaseItem> PurchaseItems { get; set; } = new System.Collections.Generic.List<PurchaseItem>();
     }
 }
