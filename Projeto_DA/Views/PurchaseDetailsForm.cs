@@ -1,4 +1,4 @@
-﻿using Projeto_DA.Controllers;
+using Projeto_DA.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,11 +33,77 @@ namespace Projeto_DA.Views
             cmbCategories.DisplayMember = "Name";
             cmbCategories.ValueMember = "ID";
 
-
+            // associar eventos dos botoes que foram gerados no designer
+            btnRemoveItem.Click += btnRemoveItem_Click;
+            btnFecharCompra.Click += btnFecharCompra_Click;
 
             LoadItems();
             CalculateTotal();
             CheckBudget();
+            CheckIfClosed();
+        }
+
+        private void CheckIfClosed()
+        {
+            using (var context = new Data.AppDbContext())
+            {
+                var purchase = context.Purchases.Find(_purchaseId);
+                if (purchase != null && purchase.IsClosed)
+                {
+                    btnAddItem.Enabled = false;
+                    btnRemoveItem.Enabled = false;
+                    btnFecharCompra.Enabled = false;
+                    txtQuantity.Enabled = false;
+                    txtPrice.Enabled = false;
+                    cmbArticles.Enabled = false;
+                    cmbCategories.Enabled = false;
+                    chkNotPlanned.Enabled = false;
+                    txtNotes.Enabled = false;
+                    btnFecharCompra.Text = "Compra Fechada";
+                }
+            }
+        }
+
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            if (dgvItems.CurrentRow != null)
+            {
+                // Verifica se o ID do item é válido
+                int index = dgvItems.CurrentRow.Index;
+                var cells = dgvItems.CurrentRow.Cells;
+                if (cells["ID"].Value != null && int.TryParse(cells["ID"].Value.ToString(), out int itemId))
+                {
+                    _itemController.Delete(itemId);
+                    LoadItems();
+                    CalculateTotal();
+                    CheckBudget();
+                }
+            }
+        }
+
+        private void btnFecharCompra_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Deseja fechar esta compra? Não poderá adicionar mais artigos depois.", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                using (var context = new Data.AppDbContext())
+                {
+                    var p = context.Purchases.Find(_purchaseId);
+                    var currentUser = context.Users.Find(SessionManager.CurrentUserId);
+
+                    if (p != null)
+                    {
+                        p.IsClosed = true;
+                        p.ClosedDate = DateTime.Now;
+                        p.ClosedBy = currentUser;
+                        context.SaveChanges();
+                    }
+                }
+                LoadItems();
+                CalculateTotal();
+                CheckBudget();
+                CheckIfClosed();
+            }
         }
 
         private void LoadItems()
