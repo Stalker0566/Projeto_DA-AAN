@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Button btnExportCSV;
             dgvPurchases = new DataGridView();
             txtName = new TextBox();
             label1 = new Label();
@@ -36,36 +35,23 @@
             btnClose = new Button();
             btnDelete = new Button();
             btnDetails = new Button();
-            btnExportCSV = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPurchases).BeginInit();
             SuspendLayout();
-            // 
-            // btnExportCSV
-            // 
-            btnExportCSV.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            btnExportCSV.ForeColor = Color.Black;
-            btnExportCSV.Location = new Point(12, 333);
-            btnExportCSV.Name = "btnExportCSV";
-            btnExportCSV.Size = new Size(194, 57);
-            btnExportCSV.TabIndex = 7;
-            btnExportCSV.Text = "Export CSV";
-            btnExportCSV.UseVisualStyleBackColor = true;
-            btnExportCSV.Click += btnExportCSV_Click;
             // 
             // dgvPurchases
             // 
             dgvPurchases.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPurchases.Location = new Point(12, 106);
+            dgvPurchases.Location = new Point(10, 104);
             dgvPurchases.Name = "dgvPurchases";
+            dgvPurchases.RowHeadersWidth = 51;
             dgvPurchases.Size = new Size(776, 221);
             dgvPurchases.TabIndex = 0;
-            
             // 
             // txtName
             // 
-            txtName.Location = new Point(55, 77);
+            txtName.Location = new Point(10, 70);
             txtName.Name = "txtName";
-            txtName.Size = new Size(113, 23);
+            txtName.Size = new Size(177, 23);
             txtName.TabIndex = 1;
             // 
             // label1
@@ -73,7 +59,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(55, 57);
+            label1.Location = new Point(10, 43);
             label1.Name = "label1";
             label1.Size = new Size(113, 17);
             label1.TabIndex = 2;
@@ -84,9 +70,9 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnAdd.ForeColor = SystemColors.ControlLightLight;
-            btnAdd.Location = new Point(254, 67);
+            btnAdd.Location = new Point(265, 47);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(79, 38);
+            btnAdd.Size = new Size(97, 50);
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Adicionar";
             btnAdd.UseVisualStyleBackColor = true;
@@ -97,9 +83,9 @@
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnClose.ForeColor = SystemColors.ControlLightLight;
-            btnClose.Location = new Point(339, 67);
+            btnClose.Location = new Point(368, 47);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(108, 38);
+            btnClose.Size = new Size(97, 50);
             btnClose.TabIndex = 4;
             btnClose.Text = "Fechar Compra";
             btnClose.UseVisualStyleBackColor = true;
@@ -110,9 +96,9 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = SystemColors.ControlLightLight;
-            btnDelete.Location = new Point(454, 67);
+            btnDelete.Location = new Point(470, 47);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(79, 38);
+            btnDelete.Size = new Size(97, 50);
             btnDelete.TabIndex = 5;
             btnDelete.Text = "Eleminar";
             btnDelete.UseVisualStyleBackColor = true;
@@ -123,9 +109,9 @@
             btnDetails.FlatStyle = FlatStyle.Flat;
             btnDetails.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnDetails.ForeColor = SystemColors.ControlLightLight;
-            btnDetails.Location = new Point(539, 67);
+            btnDetails.Location = new Point(572, 47);
             btnDetails.Name = "btnDetails";
-            btnDetails.Size = new Size(97, 38);
+            btnDetails.Size = new Size(97, 50);
             btnDetails.TabIndex = 6;
             btnDetails.Text = "Ver Artigos";
             btnDetails.UseVisualStyleBackColor = true;
@@ -137,7 +123,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 28, 30);
             ClientSize = new Size(800, 450);
-            Controls.Add(btnExportCSV);
             Controls.Add(btnDetails);
             Controls.Add(btnDelete);
             Controls.Add(btnClose);
@@ -145,8 +130,8 @@
             Controls.Add(label1);
             Controls.Add(txtName);
             Controls.Add(dgvPurchases);
-            ForeColor = SystemColors.ControlLightLight;
             Name = "PurchasesForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "PurchaseForm";
             Load += PurchasesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPurchases).EndInit();

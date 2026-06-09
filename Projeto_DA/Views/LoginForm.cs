@@ -21,7 +21,7 @@ namespace Projeto_DA.Views
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, Preencha todos os campos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -34,13 +34,13 @@ namespace Projeto_DA.Views
             }
             else
             {
-                MessageBox.Show("Неверное имя пользователя или пароль.", "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email ou Password Errados.", "Erro de Autorizacao", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit(); // fechamos a aplicação quando o utilizador clicar no botão de sair
+            this.Close();  // fechamos a aplicação quando o utilizador clicar no botão de sair
         }
     }
 }

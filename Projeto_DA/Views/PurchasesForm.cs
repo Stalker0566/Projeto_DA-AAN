@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using Projeto_DA.Controllers;
 
@@ -110,7 +110,7 @@ namespace Projeto_DA.Views
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = "Ficheiros CSV (*.csv)|*.csv";
-                sfd.FileName = "Compras_Fechadas.csv"; // Имя файла по умолчанию
+                sfd.FileName = "Compras_Fechadas.csv"; // Nome do ficheiro por defeito
                 sfd.Title = "Guardar ficheiro de compras fechadas";
 
                 // se o usuário clicar em "Salvar", chamamos o método do controller para exportar as compras fechadas para o caminho escolhido pelo usuário

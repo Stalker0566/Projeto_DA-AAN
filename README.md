@@ -32,7 +32,9 @@ Projeto_DA/
 │   ├── AuthController.cs
 │   ├── BudgetController.cs
 │   ├── PurchaseController.cs
-│   └── PurchaseItemController.cs
+│   ├── PurchaseItemController.cs
+│   ├── StatisticsController.cs
+│   └── UserController.cs
 │
 ├── Views/             # Formulários WinForms (UI)
 │   ├── LoginForm.cs
@@ -40,7 +42,9 @@ Projeto_DA/
 │   ├── ArticlesForm.cs
 │   ├── BudgetsForm.cs
 │   ├── PurchasesForm.cs
-│   └── PurchaseDetailsForm.cs
+│   ├── PurchaseDetailsForm.cs
+│   ├── StatisticsForm.cs
+│   └── UsersForm.cs
 │
 ├── Data/              # Contexto de base de dados
 │   └── AppDbContext.cs
@@ -48,6 +52,7 @@ Projeto_DA/
 ├── Migrations/        # Migrações EF Core
 ├── MainForm.cs        # Dashboard principal
 ├── SessionManager.cs  # Gestão de sessão do utilizador
+├── PasswordHasher.cs  # Hashing seguro de senhas
 └── Program.cs         # Ponto de entrada da aplicação
 ```
 
@@ -188,9 +193,9 @@ erDiagram
 ## 👥 Autores
 
 - **André Kotelyanets** (Nº Aluno: 2024147182)
-- **Nazar Bobko** (Nº Aluno: 2024??????)
-- **Artem Chernysch** (Nº Aluno: 2024??????)
-- **Grupo AAN**
+- **Nazar Bobko** (Nº Aluno: 2025112037)
+- **Artem Chernysh** (Nº Aluno: 2025192836)
+- **Grupo PL2-J**
 
 ---
 

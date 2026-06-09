@@ -36,39 +36,38 @@
             btnEdit = new Button();
             btnDelete = new Button();
             label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvArticles).BeginInit();
             SuspendLayout();
             // 
             // dgvArticles
             // 
             dgvArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvArticles.Location = new Point(12, 86);
+            dgvArticles.Location = new Point(10, 73);
             dgvArticles.Name = "dgvArticles";
+            dgvArticles.RowHeadersWidth = 51;
             dgvArticles.Size = new Size(776, 150);
             dgvArticles.TabIndex = 0;
-            
             // 
             // txtName
             // 
-            txtName.Location = new Point(204, 57);
+            txtName.Location = new Point(12, 46);
             txtName.Name = "txtName";
-            txtName.Size = new Size(100, 23);
+            txtName.Size = new Size(158, 23);
             txtName.TabIndex = 1;
-            
             // 
             // cmbCategory
             // 
             cmbCategory.FormattingEnabled = true;
-            cmbCategory.Location = new Point(310, 57);
+            cmbCategory.Location = new Point(283, 46);
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new Size(121, 23);
             cmbCategory.TabIndex = 2;
-            
             // 
             // cmbFilter
             // 
             cmbFilter.FormattingEnabled = true;
-            cmbFilter.Location = new Point(437, 57);
+            cmbFilter.Location = new Point(409, 46);
             cmbFilter.Name = "cmbFilter";
             cmbFilter.Size = new Size(121, 23);
             cmbFilter.TabIndex = 3;
@@ -79,9 +78,9 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnAdd.ForeColor = SystemColors.ControlLightLight;
-            btnAdd.Location = new Point(275, 242);
+            btnAdd.Location = new Point(243, 242);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 35);
+            btnAdd.Size = new Size(95, 24);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Adicionar";
             btnAdd.UseVisualStyleBackColor = true;
@@ -92,9 +91,9 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnEdit.ForeColor = SystemColors.ControlLightLight;
-            btnEdit.Location = new Point(356, 242);
+            btnEdit.Location = new Point(346, 242);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(75, 35);
+            btnEdit.Size = new Size(95, 24);
             btnEdit.TabIndex = 5;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = true;
@@ -105,9 +104,9 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = SystemColors.ControlLightLight;
-            btnDelete.Location = new Point(437, 242);
+            btnDelete.Location = new Point(447, 242);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 35);
+            btnDelete.Size = new Size(95, 24);
             btnDelete.TabIndex = 6;
             btnDelete.Text = "Eleminar";
             btnDelete.UseVisualStyleBackColor = true;
@@ -118,11 +117,23 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(310, 33);
+            label1.Location = new Point(351, 9);
             label1.Name = "label1";
             label1.Size = new Size(87, 21);
             label1.TabIndex = 7;
             label1.Text = "Filtrar por:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(12, 22);
+            label2.Name = "label2";
+            label2.Size = new Size(129, 21);
+            label2.TabIndex = 8;
+            label2.Text = "Nome do Artigo:";
+            label2.Click += label2_Click;
             // 
             // ArticlesForm
             // 
@@ -130,6 +141,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 28, 30);
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
@@ -157,5 +169,6 @@
         private Button btnEdit;
         private Button btnDelete;
         private Label label1;
+        private Label label2;
     }
 }

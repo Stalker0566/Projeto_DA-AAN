@@ -44,31 +44,36 @@
             // dgvBudgets
             // 
             dgvBudgets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBudgets.Location = new Point(12, 86);
+            dgvBudgets.Location = new Point(12, 122);
+            dgvBudgets.Margin = new Padding(3, 4, 3, 4);
             dgvBudgets.Name = "dgvBudgets";
-            dgvBudgets.Size = new Size(776, 292);
+            dgvBudgets.RowHeadersWidth = 51;
+            dgvBudgets.Size = new Size(887, 389);
             dgvBudgets.TabIndex = 0;
             dgvBudgets.SelectionChanged += dgvBudgets_SelectionChanged;
             // 
             // txtMonth
             // 
-            txtMonth.Location = new Point(89, 57);
+            txtMonth.Location = new Point(102, 76);
+            txtMonth.Margin = new Padding(3, 4, 3, 4);
             txtMonth.Name = "txtMonth";
-            txtMonth.Size = new Size(100, 23);
+            txtMonth.Size = new Size(114, 27);
             txtMonth.TabIndex = 1;
             // 
             // txtYear
             // 
-            txtYear.Location = new Point(195, 57);
+            txtYear.Location = new Point(223, 76);
+            txtYear.Margin = new Padding(3, 4, 3, 4);
             txtYear.Name = "txtYear";
-            txtYear.Size = new Size(100, 23);
+            txtYear.Size = new Size(114, 27);
             txtYear.TabIndex = 2;
             // 
             // txtAmount
             // 
-            txtAmount.Location = new Point(301, 57);
+            txtAmount.Location = new Point(344, 76);
+            txtAmount.Margin = new Padding(3, 4, 3, 4);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(100, 23);
+            txtAmount.Size = new Size(114, 27);
             txtAmount.TabIndex = 3;
             // 
             // label1
@@ -76,9 +81,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(89, 37);
+            label1.Location = new Point(102, 49);
             label1.Name = "label1";
-            label1.Size = new Size(31, 17);
+            label1.Size = new Size(40, 23);
             label1.TabIndex = 4;
             label1.Text = "Mes";
             // 
@@ -87,9 +92,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(195, 37);
+            label2.Location = new Point(223, 49);
             label2.Name = "label2";
-            label2.Size = new Size(32, 17);
+            label2.Size = new Size(40, 23);
             label2.TabIndex = 5;
             label2.Text = "Ano";
             // 
@@ -98,9 +103,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(301, 37);
+            label3.Location = new Point(344, 49);
             label3.Name = "label3";
-            label3.Size = new Size(58, 17);
+            label3.Size = new Size(77, 23);
             label3.TabIndex = 6;
             label3.Text = "Valor (€)";
             // 
@@ -109,11 +114,12 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnAdd.ForeColor = SystemColors.ControlLightLight;
-            btnAdd.Location = new Point(473, 47);
+            btnAdd.Location = new Point(528, 63);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 38);
+            btnAdd.Size = new Size(116, 40);
             btnAdd.TabIndex = 7;
-            btnAdd.Text = "Adicionar";
+            btnAdd.Text = "Adicidionar";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
             // 
@@ -122,9 +128,10 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnEdit.ForeColor = SystemColors.ControlLightLight;
-            btnEdit.Location = new Point(568, 47);
+            btnEdit.Location = new Point(650, 63);
+            btnEdit.Margin = new Padding(3, 4, 3, 4);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(75, 38);
+            btnEdit.Size = new Size(116, 40);
             btnEdit.TabIndex = 8;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = true;
@@ -135,9 +142,10 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = SystemColors.ControlLightLight;
-            btnDelete.Location = new Point(661, 47);
+            btnDelete.Location = new Point(772, 63);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 38);
+            btnDelete.Size = new Size(116, 40);
             btnDelete.TabIndex = 9;
             btnDelete.Text = "Eleminar";
             btnDelete.UseVisualStyleBackColor = true;
@@ -145,10 +153,10 @@
             // 
             // BudgetsForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 28, 30);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
@@ -159,6 +167,7 @@
             Controls.Add(txtYear);
             Controls.Add(txtMonth);
             Controls.Add(dgvBudgets);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "BudgetsForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Budgets";

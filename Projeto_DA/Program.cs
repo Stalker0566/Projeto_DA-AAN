@@ -23,7 +23,7 @@ namespace Projeto_DA
                 if (!context.Users.Any())
                 {
                     context.Users.Add(new User { Username = "admin", Password = PasswordHasher.HashPassword("123") });
-                    context.SaveChanges(); // Сохраняем в базу!
+                    context.SaveChanges(); // Grava na base de dados!
                 }
             }
             // ----------------------------------------

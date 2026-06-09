@@ -34,6 +34,8 @@
             btnAdd = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             SuspendLayout();
             // 
@@ -98,12 +100,36 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(26, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(40, 20);
+            label1.TabIndex = 6;
+            label1.Text = "User";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(132, 20);
+            label2.Name = "label2";
+            label2.Size = new Size(73, 20);
+            label2.TabIndex = 7;
+            label2.Text = "Password";
+            // 
             // UsersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 28, 30);
             ClientSize = new Size(774, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
@@ -127,5 +153,7 @@
         private Button btnAdd;
         private Button btnEdit;
         private Button btnDelete;
+        private Label label1;
+        private Label label2;
     }
 }

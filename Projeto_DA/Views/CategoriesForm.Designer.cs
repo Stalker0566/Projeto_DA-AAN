@@ -33,6 +33,7 @@
             btnAdd = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvCategories).BeginInit();
             SuspendLayout();
             // 
@@ -43,15 +44,16 @@
             dgvCategories.Location = new Point(23, 29);
             dgvCategories.Name = "dgvCategories";
             dgvCategories.ReadOnly = true;
+            dgvCategories.RowHeadersWidth = 51;
             dgvCategories.Size = new Size(426, 150);
             dgvCategories.TabIndex = 0;
             dgvCategories.CellContentClick += dgvCategories_CellContentClick;
             // 
             // txtName
             // 
-            txtName.Location = new Point(190, 201);
+            txtName.Location = new Point(23, 220);
             txtName.Name = "txtName";
-            txtName.Size = new Size(100, 23);
+            txtName.Size = new Size(300, 23);
             txtName.TabIndex = 1;
             // 
             // btnAdd
@@ -59,9 +61,9 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnAdd.ForeColor = SystemColors.ControlLightLight;
-            btnAdd.Location = new Point(59, 276);
+            btnAdd.Location = new Point(23, 256);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(96, 39);
+            btnAdd.Size = new Size(96, 27);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Adicionar";
             btnAdd.UseVisualStyleBackColor = true;
@@ -72,9 +74,9 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnEdit.ForeColor = SystemColors.ControlLightLight;
-            btnEdit.Location = new Point(194, 276);
+            btnEdit.Location = new Point(124, 256);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(96, 39);
+            btnEdit.Size = new Size(96, 27);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = true;
@@ -85,13 +87,23 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = SystemColors.ControlLightLight;
-            btnDelete.Location = new Point(323, 276);
+            btnDelete.Location = new Point(226, 256);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(96, 39);
+            btnDelete.Size = new Size(96, 27);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "Eleminar";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(19, 194);
+            label1.Name = "label1";
+            label1.Size = new Size(214, 23);
+            label1.TabIndex = 0;
+            label1.Text = "Introduza o nome da Categoria:";
             // 
             // CategoriesForm
             // 
@@ -99,6 +111,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 28, 30);
             ClientSize = new Size(484, 361);
+            Controls.Add(label1);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
@@ -121,5 +134,6 @@
         private Button btnAdd;
         private Button btnEdit;
         private Button btnDelete;
+        private Label label1;
     }
 }

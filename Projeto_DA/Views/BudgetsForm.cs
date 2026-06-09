@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using Projeto_DA.Controllers;
 
@@ -26,6 +26,8 @@ namespace Projeto_DA.Views
             dgvBudgets.DataSource = _budgetController.GetAll();
             if (dgvBudgets.Columns["ID"] != null)
                 dgvBudgets.Columns["ID"].Width = 40;
+            if (dgvBudgets.Columns["Valor"] != null)
+                dgvBudgets.Columns["Valor"].DefaultCellStyle.Format = "F2";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

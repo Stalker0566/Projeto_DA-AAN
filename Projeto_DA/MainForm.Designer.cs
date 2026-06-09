@@ -1,4 +1,4 @@
-﻿namespace Projeto_DA
+namespace Projeto_DA
 {
     partial class MainForm
     {
@@ -37,6 +37,7 @@
             btnUsers = new Button();
             lblWelcome = new Label();
             dataGridViewPurchases = new DataGridView();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPurchases).BeginInit();
             SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(44, 44, 46);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(btnStats);
             panel1.Controls.Add(btnPurchases);
             panel1.Controls.Add(btnBudgets);
@@ -59,11 +61,11 @@
             // btnStats
             // 
             btnStats.FlatStyle = FlatStyle.Flat;
-            btnStats.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            btnStats.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Italic, GraphicsUnit.Point, 204);
             btnStats.ForeColor = SystemColors.ControlLightLight;
-            btnStats.Location = new Point(57, 444);
+            btnStats.Location = new Point(46, 307);
             btnStats.Name = "btnStats";
-            btnStats.Size = new Size(93, 28);
+            btnStats.Size = new Size(108, 31);
             btnStats.TabIndex = 5;
             btnStats.Text = "Estatistica";
             btnStats.UseVisualStyleBackColor = true;
@@ -72,11 +74,11 @@
             // btnPurchases
             // 
             btnPurchases.FlatStyle = FlatStyle.Flat;
-            btnPurchases.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            btnPurchases.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Italic, GraphicsUnit.Point, 204);
             btnPurchases.ForeColor = SystemColors.ControlLightLight;
-            btnPurchases.Location = new Point(57, 359);
+            btnPurchases.Location = new Point(46, 257);
             btnPurchases.Name = "btnPurchases";
-            btnPurchases.Size = new Size(93, 28);
+            btnPurchases.Size = new Size(108, 31);
             btnPurchases.TabIndex = 4;
             btnPurchases.Text = "Compras";
             btnPurchases.UseVisualStyleBackColor = true;
@@ -85,11 +87,11 @@
             // btnBudgets
             // 
             btnBudgets.FlatStyle = FlatStyle.Flat;
-            btnBudgets.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            btnBudgets.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Italic, GraphicsUnit.Point, 204);
             btnBudgets.ForeColor = SystemColors.ControlLightLight;
-            btnBudgets.Location = new Point(57, 281);
+            btnBudgets.Location = new Point(46, 208);
             btnBudgets.Name = "btnBudgets";
-            btnBudgets.Size = new Size(93, 28);
+            btnBudgets.Size = new Size(108, 31);
             btnBudgets.TabIndex = 3;
             btnBudgets.Text = "Orcamentos";
             btnBudgets.UseVisualStyleBackColor = true;
@@ -98,11 +100,11 @@
             // btnArticles
             // 
             btnArticles.FlatStyle = FlatStyle.Flat;
-            btnArticles.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            btnArticles.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnArticles.ForeColor = SystemColors.ControlLightLight;
-            btnArticles.Location = new Point(57, 200);
+            btnArticles.Location = new Point(46, 160);
             btnArticles.Name = "btnArticles";
-            btnArticles.Size = new Size(93, 27);
+            btnArticles.Size = new Size(108, 31);
             btnArticles.TabIndex = 2;
             btnArticles.Text = "Artigos";
             btnArticles.UseVisualStyleBackColor = true;
@@ -111,11 +113,11 @@
             // btnCategories
             // 
             btnCategories.FlatStyle = FlatStyle.Flat;
-            btnCategories.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            btnCategories.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             btnCategories.ForeColor = SystemColors.ControlLightLight;
-            btnCategories.Location = new Point(57, 123);
+            btnCategories.Location = new Point(46, 114);
             btnCategories.Name = "btnCategories";
-            btnCategories.Size = new Size(93, 31);
+            btnCategories.Size = new Size(108, 31);
             btnCategories.TabIndex = 1;
             btnCategories.Text = "Categorias";
             btnCategories.UseVisualStyleBackColor = true;
@@ -124,11 +126,11 @@
             // btnUsers
             // 
             btnUsers.FlatStyle = FlatStyle.Flat;
-            btnUsers.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            btnUsers.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Italic, GraphicsUnit.Point, 204);
             btnUsers.ForeColor = SystemColors.ControlLightLight;
-            btnUsers.Location = new Point(57, 62);
+            btnUsers.Location = new Point(46, 66);
             btnUsers.Name = "btnUsers";
-            btnUsers.Size = new Size(93, 23);
+            btnUsers.Size = new Size(108, 31);
             btnUsers.TabIndex = 0;
             btnUsers.Text = "Users";
             btnUsers.UseCompatibleTextRendering = true;
@@ -140,21 +142,35 @@
             lblWelcome.AutoSize = true;
             lblWelcome.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             lblWelcome.ForeColor = SystemColors.ControlLightLight;
-            lblWelcome.Location = new Point(499, 27);
+            lblWelcome.Location = new Point(452, 62);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(80, 32);
+            lblWelcome.Size = new Size(165, 32);
             lblWelcome.TabIndex = 2;
-            lblWelcome.Text = "label2";
+            lblWelcome.Text = "Welcome msg";
             // 
             // dataGridViewPurchases
             // 
             dataGridViewPurchases.AllowUserToAddRows = false;
             dataGridViewPurchases.BackgroundColor = Color.FromArgb(28, 28, 30);
             dataGridViewPurchases.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPurchases.Location = new Point(245, 109);
+            dataGridViewPurchases.Location = new Point(374, 200);
             dataGridViewPurchases.Name = "dataGridViewPurchases";
-            dataGridViewPurchases.Size = new Size(587, 404);
+            dataGridViewPurchases.RowHeadersWidth = 51;
+            dataGridViewPurchases.Size = new Size(420, 132);
             dataGridViewPurchases.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(46, 366);
+            button1.Name = "button1";
+            button1.Size = new Size(108, 31);
+            button1.TabIndex = 6;
+            button1.Text = "Sair";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // MainForm
             // 
@@ -186,5 +202,6 @@
         private Button btnUsers;
         private Label lblWelcome;
         private DataGridView dataGridViewPurchases;
+        private Button button1;
     }
 }

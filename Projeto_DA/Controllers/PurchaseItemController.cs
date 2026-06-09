@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Projeto_DA.Data;
 using Projeto_DA.Models;
@@ -36,14 +36,21 @@ namespace Projeto_DA.Controllers
                 {
                     PurchaseId = purchaseId,
                     ArticleId = articleId,
-                    // se o item for previsto, a quantidade planejada é a quantidade passada, caso contrário, é zero, pois não há planejamento para itens não previstos
                     PlannedQuantity = isPlanned ? quantity : 0,
-                    BoughtQuantity = quantity, // aquilo que realmente foi comprado, que pode ser diferente do planejado, mas para simplificar, vamos assumir que é o mesmo valor passado
+                    BoughtQuantity = quantity,
                     UnitPrice = price,
-                    IsPlanned = isPlanned, // guarda se o item é previsto ou não, o que pode ser útil para análises futuras ou para diferenciar itens na interface do usuário
-                    Notes = notes          // guardamos as notas para o item, que podem ser usadas para observações ou detalhes adicionais sobre o item da compra
+                    IsPlanned = isPlanned,
+                    Notes = notes
                 };
                 context.PurchaseItems.Add(item);
+
+                // Atualizar o utilizador que alterou a compra
+                var purchase = context.Purchases.Find(purchaseId);
+                if (purchase != null)
+                {
+                    purchase.ModifiedById = SessionManager.CurrentUserId;
+                }
+
                 context.SaveChanges();
             }
         }
@@ -55,6 +62,13 @@ namespace Projeto_DA.Controllers
                 var item = context.PurchaseItems.Find(id);
                 if (item != null)
                 {
+                    // Atualizar o utilizador que alterou a compra
+                    var purchase = context.Purchases.Find(item.PurchaseId);
+                    if (purchase != null)
+                    {
+                        purchase.ModifiedById = SessionManager.CurrentUserId;
+                    }
+
                     context.PurchaseItems.Remove(item);
                     context.SaveChanges();
                 }

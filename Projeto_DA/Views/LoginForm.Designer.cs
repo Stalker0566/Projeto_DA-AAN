@@ -1,4 +1,4 @@
-﻿namespace Projeto_DA.Views
+namespace Projeto_DA.Views
 {
     partial class LoginForm
     {
@@ -38,26 +38,31 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(122, 68);
+            txtUsername.Location = new Point(35, 101);
+            txtUsername.Margin = new Padding(3, 4, 3, 4);
+            txtUsername.Multiline = true;
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(100, 23);
+            txtUsername.Size = new Size(321, 31);
             txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(122, 148);
+            txtPassword.Location = new Point(35, 186);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(100, 23);
+            txtPassword.Size = new Size(321, 31);
             txtPassword.TabIndex = 1;
+
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(153, 50);
+            label1.Location = new Point(35, 77);
             label1.Name = "label1";
-            label1.Size = new Size(37, 15);
+            label1.Size = new Size(46, 20);
             label1.TabIndex = 2;
             label1.Text = "Login";
             // 
@@ -65,9 +70,9 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(137, 130);
+            label2.Location = new Point(35, 162);
             label2.Name = "label2";
-            label2.Size = new Size(57, 15);
+            label2.Size = new Size(70, 20);
             label2.TabIndex = 3;
             label2.Text = "Password";
             // 
@@ -75,9 +80,10 @@
             // 
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ForeColor = SystemColors.ControlLightLight;
-            btnLogin.Location = new Point(137, 230);
+            btnLogin.Location = new Point(222, 305);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 23);
+            btnLogin.Size = new Size(117, 40);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Entrar";
             btnLogin.UseVisualStyleBackColor = true;
@@ -87,9 +93,10 @@
             // 
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.ForeColor = SystemColors.ControlLightLight;
-            btnExit.Location = new Point(137, 278);
+            btnExit.Location = new Point(52, 305);
+            btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(75, 23);
+            btnExit.Size = new Size(117, 40);
             btnExit.TabIndex = 5;
             btnExit.Text = "Sair";
             btnExit.UseVisualStyleBackColor = true;
@@ -97,10 +104,10 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 28, 30);
-            ClientSize = new Size(350, 450);
+            ClientSize = new Size(400, 410);
             Controls.Add(btnExit);
             Controls.Add(btnLogin);
             Controls.Add(label2);
@@ -108,9 +115,11 @@
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
+
             ResumeLayout(false);
             PerformLayout();
         }

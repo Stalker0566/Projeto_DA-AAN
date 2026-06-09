@@ -74,6 +74,11 @@ namespace Projeto_DA.Controllers
                 if (id == SessionManager.CurrentUserId)
                     throw new System.Exception("Não podes eliminar o utilizador atual!");
 
+                // verificar se o utilizador está associado a alguma compra (Foreign Key constraint)
+                bool hasPurchases = context.Purchases.Any(p => p.CreatedById == id || p.ModifiedById == id || p.ClosedById == id);
+                if (hasPurchases)
+                    throw new System.Exception("Não é possível eliminar este utilizador porque ele tem compras associadas.");
+
                 var user = context.Users.Find(id);
                 if (user != null)
                 {

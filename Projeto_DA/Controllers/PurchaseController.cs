@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Projeto_DA.Data;
 using Projeto_DA.Models;
 using System;
@@ -68,9 +68,19 @@ namespace Projeto_DA.Controllers
         {
             using (var context = new AppDbContext())
             {
-                var p = context.Purchases.Find(id);
+                var p = context.Purchases
+                               .Include(purchase => purchase.PurchaseItems)
+                               .FirstOrDefault(purchase => purchase.Id == id);
+                               
                 if (p != null)
                 {
+                    // Apagamos primeiro todos os items desta compra (para evitar o erro de Foreign Key "FK_PurchaseItems_Purchases_PurchaseId")
+                    if (p.PurchaseItems != null && p.PurchaseItems.Any())
+                    {
+                        context.PurchaseItems.RemoveRange(p.PurchaseItems);
+                    }
+
+                    // Agora já podemos apagar a compra em si
                     context.Purchases.Remove(p);
                     context.SaveChanges();
                 }
@@ -81,38 +91,34 @@ namespace Projeto_DA.Controllers
         {
             using (var context = new AppDbContext())
             {
-                // abrimos o contexto e buscamos todas as compras fechadas, incluindo os itens de cada compra e os artigos relacionados para obter os nomes dos artigos
                 var closedPurchases = context.Purchases
-                    .Include(p => p.PurchaseItems) // puxamos os itens de cada compra
-                        .ThenInclude(pi => pi.Article) // puxamos os artigos relacionados a cada item para obter o nome do artigo
+                    .Include(p => p.PurchaseItems)
+                        .ThenInclude(pi => pi.Article)
                     .Where(p => p.IsClosed == true)
                     .ToList();
 
-                // abrimos  o arquivo para escrita usando StreamWriter, especificando o caminho do arquivo e a codificação UTF-8
                 using (var writer = new StreamWriter(filePath, false, System.Text.Encoding.UTF8))
                 {
-                    // 1. escrevemos a linha de cabeçalho com os nomes das colunas, separados por ponto e vírgula
-                    writer.WriteLine("NomeCompra;DataCriacao;DataFechada;NomeArtigo;Quantidade Adquirida;Preco Unitario;Artigo Previsto;Quantidade Prevista;ArtigoNaoPrevisto/Notas");
+                    // 1. escrevemos a linha de cabeçalho com os nomes exatos exigidos pelo enunciado
+                    writer.WriteLine("NomeCompra;DataCriacao;DataFechada;NomeArtigo;ArtigoPrevisto;ArtigoNaoPrevisto;QuantidadePrevista;QuantidadeAdquirida;PrecoUnitario");
 
-                    // 2. passamos por cada compra fechada e, para cada item de compra, extraímos as informações necessárias, formatamos em uma linha separada por ponto e vírgula e escrevemos no arquivo
+                    // 2. escrevemos cada item de cada compra fechada no ficheiro
                     foreach (var purchase in closedPurchases)
                     {
                         foreach (var item in purchase.PurchaseItems)
                         {
                             string nomeCompra = purchase.Name;
                             string dataCriacao = purchase.CreatedDate.ToString("dd/MM/yyyy HH:mm");
-                            string dataFechada = purchase.CreatedDate.ToString("dd/MM/yyyy HH:mm"); // se quiser mostrar a data de fechamento, você pode adicionar um campo ClosedDate na entidade Purchase e usar aqui
+                            string dataFechada = purchase.ClosedDate.HasValue ? purchase.ClosedDate.Value.ToString("dd/MM/yyyy HH:mm") : "";
                             string nomeArtigo = item.Article.Name;
-                            string qtdAdquirida = item.BoughtQuantity.ToString();
-                            string preco = item.UnitPrice.ToString("F2");
-                            string previsto = item.IsPlanned ? "Sim" : "Nao";
-                            string qtdPrevista = item.PlannedQuantity.ToString();
-                            string notas = item.Notes != null ? item.Notes : "";
+                            string artigoPrevisto = item.IsPlanned ? "Sim" : "Nao";
+                            string artigoNaoPrevisto = !item.IsPlanned ? (string.IsNullOrEmpty(item.Notes) ? "Sim" : item.Notes) : "Nao";
+                            string qtdPrevista = item.PlannedQuantity.ToString("F2");
+                            string qtdAdquirida = item.BoughtQuantity.ToString("F2");
+                            string precoUnitario = item.UnitPrice.ToString("F2");
 
-                            // colamos todas as informações em uma linha, separando por ponto e vírgula, para seguir o formato CSV
-                            string line = $"{nomeCompra};{dataCriacao};{dataFechada};{nomeArtigo};{qtdAdquirida};{preco};{previsto};{qtdPrevista};{notas}";
-
-                            writer.WriteLine(line); // escrevemos a linha no arquivo
+                            string line = $"{nomeCompra};{dataCriacao};{dataFechada};{nomeArtigo};{artigoPrevisto};{artigoNaoPrevisto};{qtdPrevista};{qtdAdquirida};{precoUnitario}";
+                            writer.WriteLine(line);
                         }
                     }
                 }

@@ -139,5 +139,10 @@ namespace Projeto_DA.Views
             // quando o filtro de categoria for alterado, recarregamos os artigos para mostrar apenas os artigos da categoria selecionada (ou todos se "Todos" estiver selecionado)
             LoadData();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

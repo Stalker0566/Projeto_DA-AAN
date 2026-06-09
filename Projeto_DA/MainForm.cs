@@ -93,5 +93,10 @@ namespace Projeto_DA
         {
             using (StatisticsForm f = new StatisticsForm()) { f.ShowDialog(); }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
